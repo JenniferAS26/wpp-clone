@@ -1,0 +1,111 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+$links-color: rgb(101, 202, 241);
+$modal-color: #363d42;
+
+.wrapper-signin {
+  @include containerStyle(100%, 100%, 40px, 25px);
+  .auth-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 70px 1fr;
+    position: relative;
+    &__title {
+      @include titleStyle(2.4rem, center, 1px, $secondary-text-color);
+    }
+    .form {
+      @include formStyle;
+      &__input-wrapper {
+        @include inputWrapper;
+        grid-template-rows: repeat(2, 95px);
+        .input-container {
+          position: relative;
+          .input-label {
+            position: absolute;
+            top: -8px;
+            left: 0;
+            transform: translate(10px, 10px);
+            transform-origin: left;
+            transition: transform 0.25s;
+            font-size: 1.7rem;
+            letter-spacing: 1px;
+            color: $primary-text-color;
+          }
+        }
+      }
+      &__input {
+        @include inputStyle(
+          260px, 30px, transparent, $primary-text-color, 
+          $light-color, 1.7rem, $tertiary-color
+        );
+        &:focus-visible ~ .input-label,
+        &:valid ~ .input-label {
+            transform: translate(0, -25px) scale(0.8) !important;
+            color: $tertiary-color;
+        }
+      }
+      &__button {
+        @include buttonStyle(
+          120px, 50px, 3px, 
+          uppercase, 1.6rem, $primary-color, 
+          $tertiary-color
+        );
+        align-self: flex-end;
+      }
+    }
+    .signup-redirect {
+      cursor: pointer;
+      position: absolute;
+      bottom: calc(50%);
+      left: calc(50% - 67px);
+      font-size: 2rem;
+      color: $tertiary-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+input[type="number"] {
+  &:focus::-webkit-inner-spin-button, &:hover::-webkit-inner-spin-button {
+    display: none; /* para retirar el scroll */
+  }
+}
+
+.link {
+  color: $primary-color;
+}
+
+/* SweetAlert Styles */
+
+div:where(.swal2-container).swal2-center>.swal2-popup {
+  background-color: $modal-color !important;
+}
+
+div:where(.swal2-container) h2:where(.swal2-title) {
+  color: $light-color !important;
+  text-align: left !important;
+}
+
+div:where(.swal2-container) .swal2-html-container {
+  color: $primary-text-color !important;
+  text-align: left !important;
+}
+
+div:where(.swal2-container) div:where(.swal2-actions) {
+  width: 100% !important;
+  justify-content: flex-end !important;
+  padding: 0 20px !important;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  background-color: transparent !important;
+  color: $tertiary-color !important;
+  font-size: 1.4rem !important;
+  font-weight: $bold-weight !important;
+  box-shadow: none !important;
+  &:hover {
+    background-color: transparent !important;
+  }
+}

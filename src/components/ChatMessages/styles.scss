@@ -1,0 +1,38 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+$message-out-color: #195344;
+$message-in-color: #202C33;
+
+.message-container-out {
+  cursor: pointer;
+  width: 70%;
+  height: auto;
+  background-color: $message-out-color;
+  z-index: 4;
+  border-radius: 9px;
+  display: grid;
+  align-self: flex-end;
+  padding: 5px;
+  justify-self: flex-end;
+}
+
+.message-container-in {
+  cursor: pointer;
+  width: 70%;
+  height: auto;
+  background-color: $message-in-color;
+  z-index: 4;
+  border-radius: 9px;
+  display: grid;
+  align-self: flex-start;
+  padding: 5px;
+}
+
+.message {
+  display: grid;
+  color: $light-color;
+  font-size: 1.4rem;
+  font-weight: $regular-weight;
+  padding-left: 9px;
+}

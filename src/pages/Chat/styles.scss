@@ -1,0 +1,177 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+$message-bg-color: #2D383E;
+$message-text-color: #707980;
+
+.chats-container {
+  @include containerStyle(100%, 100%, 0, 0);
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 50px 711px 60px;
+  &__header {
+    @include headerContainer(52px, flex);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 5;
+    &--left {
+      width: 220px;
+      height: auto;
+      @include flexCenter(row, space-between, center);
+      .arrow-back {
+        padding-right: 10px;
+        cursor: pointer;
+      }
+      .contact-info {
+        cursor: pointer;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 40px auto;
+        grid-template-rows: 52px;
+        align-items: center;
+        img {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        .username {
+          display: block;
+          width: 100%;
+          padding-left: 10px;
+          font-size: 1.8rem;
+          color: $primary-text-color;
+          margin: 0;
+        }
+      }
+    }
+    &--right {
+      @extend .chats-container__header--left;
+      width: 110px;
+      .chat-menu-icon {
+        cursor: pointer;
+      }
+    }
+  }
+  &__main {
+    @include containerStyle(100%, 771px, 0, 0);
+    position: relative;
+    overflow-y: scroll !important;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: 43px;
+    padding-left: 15px;
+    z-index: 3;
+    @include flexCenter(row, flex-start, center);
+    .emojis {
+      width: 40px;
+      height: inherit;
+      background-color: $message-bg-color;
+      @include flexCenter(row, center, center);
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+    }
+    .input-message {
+      @include inputStyle(220px, inherit, $message-bg-color, none, $light-color, 1.8rem, $message-text-color);
+      padding: 5px 10px;
+      &:focus {
+        border-bottom: none;
+      }
+    }
+    .icons {
+      width: 70px;
+      height: inherit;
+      background-color: $message-bg-color;
+      @include flexCenter(row, center, center);
+      column-gap: 15px;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      .camera-icon {
+        padding-right: 15px;
+      }
+    }
+    .send-message-button {
+      @include buttonStyle(43px, 43px, 50%, lowercase, 1.4rem, $light-color, transparent);
+      .send-icon {
+        cursor: pointer;
+        margin-left: 10px;
+        width: 43px;
+        height: 43px;
+      }
+    }
+  }
+}
+
+.smiley-face, 
+.clip-icon, 
+.camera-icon, 
+.microphone-icon {
+  cursor: pointer;
+}
+
+.wallpaper-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.dropdown {
+  width: 31px !important;
+  height: 26px !important;
+  position: relative !important;
+
+}
+.btn-success {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.dropdown-menu.show {
+  display: grid !important;
+  align-items: center;
+}
+
+.dropdown-menu {
+  background-color: $secondary-color !important;
+  width: 150px !important;
+  height: 240px !important;
+  position: absolute !important;
+  top: 10px !important;
+  left: -110px !important;
+  .dropdown-item {
+    color: $light-color;
+    font-size: 1.4rem !important;
+    font-family: $font-source !important;
+    letter-spacing: 1px !important;
+    &:hover {
+      background-color: transparent !important;
+      color: $light-color;
+    }
+  }
+}
+
+.dropdown-toggle {
+  padding: 0 !important;
+  width: 31px !important;
+  height: 26px !important;
+}
+/* remove v icon */
+.dropdown-toggle::after {
+  content: none !important;
+}
+
+.Link-style {
+  text-decoration: none;
+  color: $light-color;
+}

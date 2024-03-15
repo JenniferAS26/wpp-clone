@@ -1,0 +1,49 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.search-contact-container {
+  @include headerContainer(150px, grid);
+  grid-template-rows: 40px 90px;
+  gap: 10px;
+  background-color: $primary-color;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  padding: 10px 15px;
+  &__top {
+    width: 100%;
+    height: 40px;
+    @include flexCenter(row, center, center);
+    .back-button {
+      @include buttonStyle(40px, 40px, none, lowercase, 1.6rem, $light-color, $secondary-color);
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+    .input-search {
+      width: 340px;
+      height: 40px;
+      border: none;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      background-color: $secondary-color;
+      font-size: 1.6rem;
+      color: $light-color;
+      letter-spacing: 1px;
+      padding-left: 10px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  &__bottom {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    .filter-button {
+      @include buttonStyle(90px, 30px, 20px, lowercase, 1.3rem, $light-color, $secondary-color);
+      @include flexCenter(row, space-evenly, center);
+    }
+    button > p {
+      margin: 0;
+    }
+  }
+}

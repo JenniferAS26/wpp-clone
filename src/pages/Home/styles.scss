@@ -1,0 +1,7 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.home-container {
+  display: block;
+  @include containerStyle(100%, 100%, 0, 0);
+}

@@ -1,0 +1,21 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.wrapper {
+  @include containerStyle(100%, 703px, 10px, 15px);
+  position: relative;
+  .cards-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .message-button {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    @include buttonStyle(51px, 51px, 50%, uppercase, 1.6rem, $light-color, transparent);
+  }
+}

@@ -1,0 +1,260 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+$auxiliar-color: #18252D; 
+$modal-color: #363d42;
+
+.contact-info-container {
+  @include containerStyle(100%, 100%, 0, 0);
+  // display: none;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 260px 150px 230px 153px;
+  gap: 10px;
+  &__top {
+    width: 100%;
+    height: 100%;
+    @include flexCenter(row, space-between, flex-start);
+    background-color: $auxiliar-color;
+    padding: 10px;
+    .arrow-back-icon, .contact-menu-icon {
+      cursor: pointer;
+    }
+    .contact {
+      width: 220px;
+      height: inherit;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      grid-template-rows: 110px 40px 30px 60px;
+      &__photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      &__name {
+        font-size: 2rem;
+        letter-spacing: 1px;
+        color: $light-color;
+      }
+      &__number {
+        font-size: 1.5rem;
+        color: $primary-text-color;
+      }
+      &__actions {
+        width: 100%;
+        height: 100%;
+        @include flexCenter(row, space-between, center);
+        &--options {
+          display: grid;
+          gap: 10px;
+          button {
+            @include buttonStyle(30px,30px, 50%, lowercase, 1.8rem, $tertiary-color, transparent);
+          }
+          span {
+            font-size: 1.4rem;
+            font-weight: $bold-weight;
+            color: $tertiary-color;
+
+          }
+        }
+      }
+    }
+  }
+  &__media-links-docs {
+    width: 100%;
+    height: 100%;
+    background-color: $auxiliar-color;
+    display: grid;
+    gap: 5px;
+    grid-template-rows: 40px 85px;
+    padding: 0 10px;
+    &--top {
+      width: 100%;
+      height: 100%;
+      @include flexCenter(row, space-between, center);
+      .p {
+        font-size: 1.4rem;
+        font-weight: $bold-weight;
+        color: $primary-text-color;
+      }
+      div {
+        width: 50px;
+        @include flexCenter(row, space-between, center);
+        span {
+          font-size: 1.4rem;
+        color: $primary-text-color;
+        }
+        button {
+          @include buttonStyle(30px,30px, 50%, lowercase, 1.8rem, $primary-text-color, transparent);
+        }
+      }
+    }
+    &--carousel {
+      @extend .contact-info-container__media-links-docs--top;
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+    }
+  }
+  &__notifications {
+    width: 100%;
+    height: 100%;
+    background-color: $auxiliar-color;
+    padding: 0 10px;
+    &--items {
+      width: 100%;
+      height: calc(100% / 4);
+      @include flexCenter(row, flex-start, center);
+      .i, span {
+        font-size: 1.8rem;
+        color: $primary-text-color;
+      }
+      span {
+        padding-left: 20px;
+      }
+    }
+  }
+  &__encryption {
+    width: 100%;
+    height: 100%;
+    background-color: $auxiliar-color;
+    &--items {
+      width: 100%;
+      height: calc(100% / 3);
+      padding: 0 10px;
+      @include flexCenter(row, flex-start, center);
+      .i {
+        font-size: 1.8rem;
+        color: $primary-text-color;
+      }
+      .i-clock {
+        font-size: 2.3rem;
+      }
+      .description-wrapper {
+        width: 350px;
+        height: 100%;
+        display: grid;
+        align-content: center;
+        padding-left: 20px;
+        .p {
+          font-size: 1.6rem;
+          color: $secondary-text-color;
+        }
+        span {
+          font-size: 1.3rem;
+          color: $tertiary-text-color;
+          line-height: 1;
+        }
+      }
+      .delete-button {
+        @include buttonStyle(20px, 30px, 50%, lowercase, 1.8rem, #de2d4e, transparent);
+        i {
+          color: inherit;
+        }
+      }
+    }
+  }
+}
+
+.p {
+  margin-bottom: 0 !important;
+}
+
+.dropdown {
+  width: 31px !important;
+  height: 26px !important;
+  position: relative !important;
+
+}
+.btn-success {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.dropdown-menu.show {
+  display: grid !important;
+  align-items: center;
+}
+
+.dropdown-menu {
+  background-color: $secondary-color !important;
+  width: 160px !important;
+  height: 180px !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -121px !important;
+  .dropdown-item {
+    color: $light-color;
+    font-size: 1.4rem !important;
+    font-family: $font-source !important;
+    letter-spacing: 1px !important;
+    &:hover {
+      background-color: transparent !important;
+      color: $light-color;
+    }
+  }
+}
+
+.dropdown-toggle {
+  padding: 0 !important;
+  width: 31px !important;
+  height: 26px !important;
+}
+/* remove v icon */
+.dropdown-toggle::after {
+  content: none !important;
+}
+
+.Link-style {
+  text-decoration: none;
+  color: $light-color;
+}
+
+/* SweetAlert Styles */
+
+div:where(.swal2-container).swal2-center>.swal2-popup {
+  background-color: $modal-color !important;
+}
+
+div:where(.swal2-container) h2:where(.swal2-title) {
+  color: $light-color !important;
+  text-align: left !important;
+}
+
+div:where(.swal2-container) .swal2-html-container {
+  color: $primary-text-color !important;
+  text-align: left !important;
+}
+
+div:where(.swal2-container) div:where(.swal2-actions) {
+  width: 100% !important;
+  justify-content: flex-end !important;
+  padding: 0 20px !important;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel {
+  background-color: transparent !important;
+  color: $tertiary-color !important;
+  font-size: 1.4rem !important;
+  font-weight: $bold-weight !important;
+  box-shadow: none !important;
+  &:hover {
+    background-color: transparent !important;
+  }
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  background-color: transparent !important;
+  color: $tertiary-color !important;
+  font-size: 1.4rem !important;
+  font-weight: $bold-weight !important;
+  box-shadow: none !important;
+  &:hover {
+    background-color: transparent !important;
+  }
+}

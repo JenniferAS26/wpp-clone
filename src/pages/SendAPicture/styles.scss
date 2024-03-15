@@ -1,0 +1,58 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.send-picture-container {
+  @include containerStyle(100%, 100%, 0, 0);
+  position: relative;
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position-x: calc(50%);
+    // opacity: 0.8;
+    z-index: 0;
+    position: absolute;
+  }
+  &__top {
+    width: 100%;
+    height: 50px;
+    @include flexCenter(row, space-between, center);
+    padding: 0 10px;
+    position: absolute;
+    z-index: 2;
+    button {
+      @include flexCenter(row, center, center);
+      @include buttonStyle(40px, 40px, 50%, lowercase, 2rem, $light-color, rgba($color: $primary-color, $alpha: 0.3));
+    }
+    .right {
+      width: 190px;
+      @include flexCenter(row, space-between, center);
+    }
+  }
+  &__choose-option {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: $dark-color;
+    @include flexCenter(row, space-between, center);
+    padding: 0 10px;
+    .name-wrapper {
+      width: 100px;
+      height: 30px;
+      border-radius: 30px;
+      background-color: $secondary-color;
+      @include flexCenter(row, center, center);
+      &__title {
+        font-size: 1.4rem;
+        color: $secondary-text-color;
+        margin: 0;
+      }
+    }
+    .send-icon {
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@use 'variables' as *;
+
+@mixin flexCenter($direction, $content, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $align;
+}
+
+@mixin containerStyle($width, $height, $top-bottom, $right-left) {
+  width: $width;
+  height: $height;
+  padding: $top-bottom $right-left;
+}
+
+@mixin headerContainer($height, $display) {
+  width: 100%;
+  height: $height;
+  background-color: $secondary-color;
+  display: $display;
+}
+
+@mixin titleStyle($f-s, $text-align, $letter-spc, $color) {
+  font-size: $f-s;
+  text-align: $text-align;
+  letter-spacing: $letter-spc;
+  color: $color;
+}
+
+@mixin buttonStyle($width, $height, $b-r, $text-transf, $f-s, $color, $bg-color) {
+  cursor: pointer;
+  width: $width;
+  height: $height;
+  border-radius: $b-r;
+  border: none;
+  text-transform: $text-transf;
+  font-size: $f-s;
+  font-weight: $bold-weight;
+  color: $color;
+  background-color: $bg-color;
+}
+
+@mixin formStyle {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+@mixin inputWrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+@mixin inputStyle($width, $height, $bg-color, $border-botom-color, $color, $f-s, $focus-color) {
+  padding: 5px;
+  width: $width;
+  height: $height;
+  background-color: $bg-color;
+  border: none;
+  border-bottom: 2px solid $border-botom-color;
+  color: $color;
+  font-size: $f-s;
+  &:focus {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid $focus-color;
+  }
+}

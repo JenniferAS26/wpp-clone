@@ -1,0 +1,73 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.contact-list-container {
+  @include containerStyle(100%, 100%, 0, 0);
+  &__header {
+    width: 100%;
+    height: 60px;
+    background-color: $secondary-color;
+    @include flexCenter(row, space-between, center);
+    &--left {
+      width: 200px;
+      @include flexCenter(row, flex-start, center);
+      column-gap: 20px;
+      .info {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        color: $light-color;
+        &__title {
+          margin: 0;
+          font-size: 2.1rem;
+        }
+        &__text {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    &--right {
+      width: 60px;
+      @include flexCenter(row, space-between, center);
+    }
+  }
+  &__main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 60px 40px 623px;
+    padding: 20px 15px;
+    .new-contact-container {
+      width: 100%;
+      height: 60px;
+      @include flexCenter(row, space-between, center);
+      .left-group {
+        width: 50%;
+        height: 100%;
+        @include flexCenter(row, flex-start, center);
+        column-gap: 15px;
+      }
+      &__button {
+        @include buttonStyle(50px, 50px, 50%, lowercase, 2.7rem, $light-color, $tertiary-color);
+        @include flexCenter(row, center, center);
+      }
+      &__title {
+        font-size: 2.2rem;
+        color: $light-color;
+      }
+    }
+    .section-title {
+      align-self: center;
+      color: $primary-text-color;
+      font-size: 1.4rem;
+    }
+    .cards-contacts-container {
+      width: 100%;
+      height: 623px;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
