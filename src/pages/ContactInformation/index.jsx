@@ -1,15 +1,14 @@
-import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { deleteData } from '@utils/api.js'
+import { deleteData } from '../../Utils/api.js'
 import Swal from 'sweetalert2'
 import Dropdown from 'react-bootstrap/Dropdown'
-import backIcon from '@icons/back.png'
-import verticalMenu from '@icons/menu-vertical.png'
-import carousel1 from '@images/image1.jpg'
-import carousel2 from '@images/image2.jpg'
-import carousel3 from '@images/image3.jpg'
-import carousel4 from '@images/image4.jpg'
-import carousel5 from '@images/image5.jpg'
+import backIcon from '../../assets/icons/back.png'
+import verticalMenu from '../../assets/icons/menu-vertical.png'
+import carousel1 from '../../assets/images/image1.jpg'
+import carousel2 from '../../assets/images/image2.jpg'
+import carousel3 from '../../assets/images/image3.jpg'
+import carousel4 from '../../assets/images/image4.jpg'
+import carousel5 from '../../assets/images/image5.jpg'
 import { 
   FaPhoneAlt, FaVideo, 
   FaChevronRight, FaBell,

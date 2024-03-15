@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import { updateData, saveImage } from '@utils/api.js'
+import { updateData, saveImage } from '../../Utils/api.js'
 import Swal from 'sweetalert2'
-import backArrow from '@icons/back.png'
+import backArrow from '../../assets/icons/back.png'
 import './styles.scss'
 
 const Profile = () => {

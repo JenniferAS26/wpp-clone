@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from '../Header'
-import SearchContact from '@components/SearchContact'
+import SearchContact from '../../components/SearchContact'
 
 const Layout = () => {
   const [showHeader, setShowHeader] = useState(true)
@@ -13,7 +13,7 @@ const Layout = () => {
   
   useEffect( () => {
     const currentId = localStorage.getItem('currentId')
-    fetch(`https://whatsapp-clone-sprint-db.up.railway.app/chats?userId=${currentId}`)
+    fetch(`https://backend-whatsapp-clone-onux.onrender.com/chats?userId=${currentId}`)
       .then(response => response.json())
       .then(data => setContacts(data))
   }, [])

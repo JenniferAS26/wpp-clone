@@ -1,5 +1,5 @@
 import axios from 'axios'
-const BASE_URL = process.env.API
+const BASE_URL = 'https://backend-whatsapp-clone-onux.onrender.com'
 const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dkd5jyxby/image/upload'
 
 /** Users */

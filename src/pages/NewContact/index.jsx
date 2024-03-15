@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { createData, getDataByQueryParams, saveImage } from "@utils/api.js";
+import { createData, getDataByQueryParams, saveImage } from "../../Utils/api.js";
 import Swal from "sweetalert2";
-import silhouette from "@images/user-silhouette.jpg";
-import takeAPicture from "@icons/take-a-picture.png";
+import silhouette from "../../assets/images/user-silhouette.jpg";
+import takeAPicture from "../../assets/icons/take-a-picture.png";
 import { FaChevronLeft } from "react-icons/fa";
 import "./styles.scss";
 

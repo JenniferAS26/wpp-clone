@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { deleteData } from '@utils/api.js'
+import { deleteData } from '../../Utils/api.js'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import './styles.scss'
@@ -12,7 +12,7 @@ const ChatMessages = ({ message }) => {
 
   // const fetchMessages = async () => {
   //   try {
-  //     const response = await axios.get(`https://whatsapp-clone-sprint-db.up.railway.app/messages?userId=${contactData.userId}&contactId=${contactData.contactId}`)
+  //     const response = await axios.get(`https://backend-whatsapp-clone-onux.onrender.com/messages?userId=${contactData.userId}&contactId=${contactData.contactId}`)
   //     setMessages(response.data)
   //   } catch (error) {
   //     console.error(error.response)
@@ -22,7 +22,7 @@ const ChatMessages = ({ message }) => {
   // useEffect(() => {
   //   const fetchMessages = async () => {
   //     try {
-  //       const response = await axios.get(`https://whatsapp-clone-sprint-db.up.railway.app/messages?userId=${contactData.userId}&contactId=${contactData.contactId}`)
+  //       const response = await axios.get(`https://backend-whatsapp-clone-onux.onrender.com/messages?userId=${contactData.userId}&contactId=${contactData.contactId}`)
   //       setMessages(response.data)
   //     } catch (error) {
   //       console.error(error.response)

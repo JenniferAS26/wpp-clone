@@ -1,7 +1,7 @@
 import React from 'react'
-import menuHorizontal from '@icons/menu-horizontal.png'
-import edit from '@icons/edit.png'
-import takeAPicture from '@icons/take-a-picture.png'
+import menuHorizontal from '../../assets/icons/menu-horizontal.png'
+import edit from '../../assets/icons/edit.png'
+import takeAPicture from '../../assets/icons/take-a-picture.png'
 import './styles.scss'
 
 const StatusContainer = () => {

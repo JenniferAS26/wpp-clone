@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { createData, updateData } from '@utils/api.js'
-import ChatMessages from '@components/ChatMessages'
+import { createData, updateData } from '../../Utils/api.js'
+import ChatMessages from '../../components/ChatMessages'
 import Dropdown from 'react-bootstrap/Dropdown'
-import smileyFace from '@icons/smiley-face.png'
-import backArrow from '@icons/back-grey.png'
-import videoCamera from '@icons/video-camera-white.png'
-import phone from '@icons/phone-white.png'
-import menu from '@icons/menu-vertical.png'
-import clip from '@icons/clip.png'
-import camera from '@icons/camera.png'
-import voiceNote from '@icons/voice-note.png'
-import sendMessage from '@icons/send.png'
-import MessageContainer from '@components/MessageContainer'
-import wallpaper from '@images/wallpaper2.jpg'
+import smileyFace from '../../assets/icons/smiley-face.png'
+import backArrow from '../../assets/icons/back-grey.png'
+import videoCamera from '../../assets/icons/video-camera-white.png'
+import phone from '../../assets/icons/phone-white.png'
+import menu from '../../assets/icons/menu-vertical.png'
+import clip from '../../assets/icons/clip.png'
+import camera from '../../assets/icons/camera.png'
+import voiceNote from '../../assets/icons/voice-note.png'
+import sendMessage from '../../assets/icons/send.png'
+import MessageContainer from '../../components/MessageContainer'
+import wallpaper from '../../assets/images/wallpaper2.jpg'
 import { v4 as uuid } from 'uuid'
 import './styles.scss'
 
@@ -33,7 +33,7 @@ const Chat = () => {
   
   const fetchMessages = async () => {
     try {
-      const response = await axios.get(`https://whatsapp-clone-sprint-db.up.railway.app/messages?userId=${contactData.userId}&contactId=${contactData.contactId}`)
+      const response = await axios.get(`https://backend-whatsapp-clone-onux.onrender.com/messages?userId=${contactData.userId}&contactId=${contactData.contactId}`)
       setMessages(response.data)
     } catch (error) {
       console.error(error.response)
@@ -43,7 +43,7 @@ const Chat = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await axios.get(`https://whatsapp-clone-sprint-db.up.railway.app/messages?userId=${contactData.userId}&contactId=${contactData.contactId}`)
+        const response = await axios.get(`https://backend-whatsapp-clone-onux.onrender.com/messages?userId=${contactData.userId}&contactId=${contactData.contactId}`)
         setMessages(response.data)
       } catch (error) {
         console.error(error.response)

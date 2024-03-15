@@ -1,11 +1,11 @@
 import React from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { deleteData } from '@utils/api.js'
+import { deleteData } from '../../Utils/api.js'
 import Swal from 'sweetalert2'
 import Dropdown from 'react-bootstrap/Dropdown'
-import verticalMenu from '@icons/menu-vertical.png'
-import searchIcon from '@icons/search.png'
-import cameraIcon from '@icons/camera.png'
+import verticalMenu from '../../assets/icons/menu-vertical.png'
+import searchIcon from '../../assets/icons/search.png'
+import cameraIcon from '../../assets/icons/camera.png'
 import './styles.scss'
 
 const Header = ({ onButtonClick }) => {

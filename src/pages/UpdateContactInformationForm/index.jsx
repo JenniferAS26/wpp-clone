@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
-import { updateData } from '@utils/api.js'
+import { updateData } from '../../Utils/api.js'
 import Swal from 'sweetalert2'
-import backIcon from '@icons/back.png'
+import backIcon from '../../assets/icons/back.png'
 import { FaUser, FaPhoneAlt } from 'react-icons/fa'
 import './styles.scss'
 

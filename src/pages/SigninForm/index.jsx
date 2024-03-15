@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { getDataByQueryParams } from '@utils/api'
+import { getDataByQueryParams } from '../../Utils/api'
 import Swal from 'sweetalert2'
 import './styles.scss'
 

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import ChatContainer from '@components/ChatContainer'
-import ChatCard from '@components/ChatCard'
+import { useState, useEffect } from 'react'
+import ChatContainer from '../../components/ChatContainer'
+import ChatCard from '../../components/ChatCard'
 
 const Home = ({ filteredContacts }) => {
   const [contacts, setContacts] = useState([])
@@ -10,7 +10,7 @@ const Home = ({ filteredContacts }) => {
   
   useEffect( () => {
     const currentId = localStorage.getItem('currentId')
-    fetch(`https://whatsapp-clone-sprint-db.up.railway.app/chats?userId=${currentId}`)
+    fetch(`https://backend-whatsapp-clone-onux.onrender.com/chats?userId=${currentId}`)
       .then(response => response.json())
       .then(data => setContacts(data))
   }, [])

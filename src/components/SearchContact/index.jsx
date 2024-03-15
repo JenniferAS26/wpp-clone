@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import backArrow from '@icons/back.png'
+import backArrow from '../../assets/icons/back.png'
 import { MdMarkChatUnread, MdStickyNote2, MdVideocam, MdInsertPhoto, MdOutlineHeadphones, MdPoll } from 'react-icons/md'
 import { FiLink2 } from 'react-icons/fi'
 import { HiGif } from 'react-icons/hi2'

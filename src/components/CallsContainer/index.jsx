@@ -1,9 +1,9 @@
 import React from 'react'
-import callingIcon from '@icons/calling.png'
-import missingCallIcon from '@icons/missing-call.png'
-import phoneIcon from '@icons/phone.png'
-import videoCameraIcon from '@icons/video-camera.png'
-import makeACallICon from '@icons/make-a-call.png'
+import callingIcon from '../../assets/icons/calling.png'
+import missingCallIcon from '../../assets/icons/missing-call.png'
+import phoneIcon from '../../assets/icons/phone.png'
+import videoCameraIcon from '../../assets/icons/video-camera.png'
+import makeACallICon from '../../assets/icons/make-a-call.png'
 import './styles.scss'
 
 const CallsContainer = () => {

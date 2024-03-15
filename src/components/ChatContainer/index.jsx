@@ -1,5 +1,5 @@
 import React from 'react'
-import messageIcon from '@icons/message.png'
+import messageIcon from '../../assets/icons/message.png'
 import './styles.scss'
 import { useNavigate } from 'react-router-dom'
 
